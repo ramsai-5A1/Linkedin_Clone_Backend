@@ -1,12 +1,19 @@
 const express = require('express');
 const { data } = require('./Mock_Data/Data1');
 const MOCK_DATA = require('./Mock_Data/Data2.json');
+const {NewsData} = require('./Mock_Data/Data3');
 const app = express();
 const PORT = 3001;
 
 app.get("/getData", (req, res) => {
     res.status(200).json({
         data: data
+    });
+});
+
+app.get("/getNewsData", (req, res) => {
+    res.status(201).json({
+        data: NewsData
     });
 });
 
